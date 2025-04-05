@@ -9,7 +9,13 @@
 }
 
 #createBadgeForm > div{
-    width: 500px;
+    width: 100%;
+}
+
+@media screen and (min-width: 576px) {
+    #createBadgeForm > div{
+        width: 500px;
+    }
 }
 
 .modalBackground{

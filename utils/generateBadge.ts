@@ -20,7 +20,7 @@ export default async function  (config: Object) {
 
     const format = {
         label: config.label ? config.label : '',
-        message: '230 / 102134',
+        message: config.message,
         color: config.color ? config.color : 'brightgreen',
         logoBase64 : ''
     }

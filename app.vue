@@ -1,5 +1,5 @@
 <template>
-	<div data-bs-theme="dark" class="vh-100 d-flex flex-column bg-body-tertiary  text-body">
+	<div data-bs-theme="dark" class="d-flex flex-column bg-body-tertiary text-body pb-5" style="min-height: 100vh">
 		<nav class="navbar navbar-expand-lg  sticky-top">
 			<div class="container-fluid">
 				<a class="navbar-brand" href="#">Hits Counter</a>
@@ -46,10 +46,7 @@
 
 						<ColorPicker @color="color => badgeData.color = color"></ColorPicker>
 					</div>
-					<div v-if="preview">
-						<h6>Preview</h6>
-						<img :src="preview" alt="badge">
-					</div>
+
 					<div>
 						<button class="btn bg-secondary w-100 rounded-3 btn-lg border fw-bold"
 						        @click="generate()"
@@ -57,6 +54,7 @@
 							Generate
 						</button>
 					</div>
+					<Preview v-if="preview" :params="query"></Preview>
 				</div>
 			</div>
 		</div>
@@ -75,11 +73,10 @@ const badgeData = reactive({
 	color: ""
 })
 
-const preview = ref("")
-
+const preview = ref(false)
+const query = ref("")
 const generate = async () => {
-	preview.value = ""
-	const query = new URLSearchParams(badgeData)
-	preview.value = `/api/previewBadge?${query.toString()}`;
+	query.value = new URLSearchParams(badgeData).toString()
+	preview.value = true;
 }
 </script>
