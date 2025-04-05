@@ -9,7 +9,7 @@ export default defineNuxtConfig({
     ],
     app: {
         head: {
-            title: "Hits Counter",
+            title: "Hits Counter | Website Visit Tracker With an Image",
             htmlAttrs: {
                 lang: 'en',
             },

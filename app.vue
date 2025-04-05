@@ -70,7 +70,13 @@
 </template>
 <script setup lang="ts">
 
-
+useSeoMeta({
+	title: 'Hits Counter | Track Website Visits with a badge',
+	ogTitle: 'Hits Counter | Track Website Visits with an badge',
+	description: 'Track your website or GitHub profile / repo with an badge. No JavaScript required.',
+	ogDescription: 'Track your website or GitHub profile / repo with an badge. No JavaScript required.',
+	ogImage: 'https://hits.donaldzou.dev/seo.png',
+})
 import IconPicker from "~/components/icon-picker.vue";
 import ColorPicker from "~/components/color-picker.vue";
 
