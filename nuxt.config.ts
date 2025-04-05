@@ -13,6 +13,12 @@ export default defineNuxtConfig({
             htmlAttrs: {
                 lang: 'en',
             },
+            meta: [
+                {
+                    name: 'google-site-verification',
+                    content: 'DZAz-h1AemdJo4_S2hJddtHRNkapwEd1dTYW-R7N018'
+                }
+            ],
             link: [
                 { rel: 'icon', type: 'image/png', href: '/Icon-1.png' },
             ]
