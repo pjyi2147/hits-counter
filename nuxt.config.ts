@@ -6,5 +6,16 @@ export default defineNuxtConfig({
       'bootstrap/dist/css/bootstrap.min.css',
       'bootstrap-icons/font/bootstrap-icons.min.css',
       '~/assets/css/main.css'
-    ]
+    ],
+    app: {
+        head: {
+            title: "Hits Counter",
+            htmlAttrs: {
+                lang: 'en',
+            },
+            link: [
+                { rel: 'icon', type: 'image/png', href: '/Icon-1.png' },
+            ]
+        }
+    }
 })
