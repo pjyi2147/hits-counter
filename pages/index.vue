@@ -23,7 +23,7 @@ const generate = async () => {
 			<h1 class="display-1 fw-bold mt-5">
 				Hits Counter
 			</h1>
-			<img alt="Badge" class="mb-3" src="https://hits.donaldzou.dev/api/hit?url=https%3A%2F%2Fhitscounter.dev&label=Visitor&icon=heart-fill&color=%23ffffff">
+			<img alt="Badge" class="mb-3" src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fhitscounter.dev&label=Visitor&icon=heart-fill&color=%23ffffff">
 			<p>
 				Due to the recent close down of
 				<a href="https://github.com/gjbae1212/hit-counter">hits.seeyoufarm.com</a>, <br>I've decided to recreate one based on it. <br>Thanks <a href="https://github.com/gjbae1212">@gjbae1212</a> for the hardworking.
