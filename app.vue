@@ -23,10 +23,15 @@
 					Hits Counter
 				</h1>
 				<img alt="Badge" class="mb-3" src="https://hits.donaldzou.dev/api/hit?url=https%3A%2F%2Fhits.donaldzou.dev&label=Visitor&icon=heart-fill&color=%23ffffff">
-				<h6>
+				<p>
 					Due to the recent close down of
 					<a href="https://github.com/gjbae1212/hit-counter">hits.seeyoufarm.com</a>, <br>I've decided to recreate one based on it. <br>Thanks <a href="https://github.com/gjbae1212">@gjbae1212</a> for the hardworking.
-				</h6>
+				</p>
+				<div class="mt-5">
+					<h5>
+						Create a badge to track visits on your websites / GitHub Profile / GitHub Repo / anything that can host a image, no Javascript requirement (i.e. Google Analytics).
+					</h5>
+				</div>
 				<hr class="my-5">
 				<h4 class="mb-4">Create Your Badge</h4>
 				<div class="d-flex flex-column gap-3 align-items-center" id="createBadgeForm">
