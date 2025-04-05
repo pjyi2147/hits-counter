@@ -32,7 +32,7 @@ useSeoMeta({
 	ogTitle: 'Hits Counter | Track Website Visits with an badge',
 	description: 'Track your website or GitHub profile / repo with an badge. No JavaScript required.',
 	ogDescription: 'Track your website or GitHub profile / repo with an badge. No JavaScript required.',
-	ogImage: 'https://hits.donaldzou.dev/seo.png',
+	ogImage: 'https://hitscounter.dev/seo.png',
 })
 
 </script>
