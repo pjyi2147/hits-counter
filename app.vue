@@ -22,7 +22,7 @@
 				</h1>
 				<h6>
 					Due to the recent close down of
-					<a href="https://github.com/gjbae1212/hit-counter">hits.seeyoufarm.com</a>, <br>I've decided to recreate one based on it. <br>Thanks <a href="https://github.com/gjbae1212">@gjbae1212</a> for your hardwork.
+					<a href="https://github.com/gjbae1212/hit-counter">hits.seeyoufarm.com</a>, <br>I've decided to recreate one based on it. <br>Thanks <a href="https://github.com/gjbae1212">@gjbae1212</a> for the hardworking.
 				</h6>
 				<hr class="my-5">
 				<h4 class="mb-4">Create Your Badge</h4>
