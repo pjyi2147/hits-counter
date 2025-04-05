@@ -8,7 +8,9 @@
 				</button>
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ms-auto">
-						<a class="nav-link" aria-disabled="true">
+						<a class="nav-link" aria-disabled="true"
+						   target="_blank"
+						   href="https://github.com/donaldzou/hits-counter">
 							<i class="bi bi-github me-2"></i>
 							Github</a>
 					</div>
