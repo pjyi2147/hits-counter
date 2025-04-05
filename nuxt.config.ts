@@ -1,5 +1,6 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+    modules: ['@pinia/nuxt'],
     compatibilityDate: '2024-11-01',
     devtools: { enabled: true },
     css: [
@@ -8,6 +9,7 @@ export default defineNuxtConfig({
       '~/assets/css/main.css'
     ],
     app: {
+        pageTransition: { name: 'page', mode: 'out-in' },
         head: {
             title: "Hits Counter | Website Visit Tracker With an Image",
             htmlAttrs: {

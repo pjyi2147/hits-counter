@@ -15,6 +15,8 @@ const getHost = () => {
 const getHtml = computed(() => {
 	return `<img src="${getHost()}/api/hit?${props.params}">`
 })
+
+const jsonOutput = ref(false)
 </script>
 
 <template>
@@ -32,8 +34,18 @@ const getHtml = computed(() => {
 				</div>
 				<div class="card-body">
 					<samp>
-						{{getHost()}}/api/hit?{{params}}
+						{{getHost()}}/api/hit?{{params + (jsonOutput ? '&output=json':'')}}
 					</samp>
+					<div class="d-flex mt-2">
+						<div class="form-check form-switch ms-auto">
+							<label class="form-check-label" for="jsonOutput">
+								<small>Output in JSON</small>
+							</label>
+							<input
+								v-model="jsonOutput"
+								class="form-check-input" type="checkbox" role="switch" id="jsonOutput">
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>

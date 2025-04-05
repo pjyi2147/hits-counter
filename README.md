@@ -6,9 +6,9 @@ Due to the recent close down of [hits.seeyoufarm.com](https://github.com/gjbae12
 
 This project allows you to create a badge like this:
 
-![Badge](https://hits.donaldzou.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fdonaldzou%2Fhits-counter&label=Visitor&icon=github&color=%23198754)
+![Badge](https://hitscounter.dev/api/hit?url=https%3A%2F%2Fgithub.com%2Fdonaldzou%2Fhits-counter&label=Visitor&icon=github&color=%23198754)
 
 to record how many visit your site have!
 
 ## How to use?
-- Visit [Hits Counter](https://hits.donaldzou.dev) to create your badge!
+- Visit [Hits Counter](https://hitscounter.dev) to create your badge!

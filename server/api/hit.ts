@@ -28,9 +28,17 @@ export default defineEventHandler(async (event) => {
 			totalCount = total.rows[0].total_hits
 		}
 	}
-	setResponseHeaders(event, {
-		"Content-Type": "image/svg+xml;charset=utf-8",
-	});
-	query.message = `${currentCount} / ${totalCount}`
-	return generateBadge(query)
+
+	if (query.output && query.output === 'json'){
+		return {
+			'today_hits': currentCount,
+			'total_hits': totalCount
+		}
+	}else{
+		setResponseHeaders(event, {
+			"Content-Type": "image/svg+xml;charset=utf-8",
+		});
+		query.message = `${currentCount} / ${totalCount}`
+		return generateBadge(query)
+	}
 })
