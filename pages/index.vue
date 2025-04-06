@@ -46,7 +46,7 @@ if ($socket){
 							Create a badge to track visits on your websites / GitHub Profile / GitHub Repo / anything that can host a image, no Javascript requirement (i.e. Google Analytics).
 						</p>
 						<p class="fw-lighter h5 my-3 d-flex align-items-center gap-2">
-							A Badge like this <img src="http://localhost:3000/api/hit?url=https%3A%2F%2Fhitscounter.dev&label=Visitors&icon=heart-fill&color=%23ff7575" alt="Badge">
+							A Badge like this <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fhitscounter.dev&label=Visitors&icon=heart-fill&color=%23ff7575" alt="Badge">
 						</p>
 					</div>
 					<p class="text-muted">
