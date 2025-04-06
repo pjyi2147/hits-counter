@@ -23,6 +23,6 @@ export default defineEventHandler(async (event) => {
     });
     query.message = `${currentCount} / ${totalCount}`
 
-    console.log(`Took: ${Date.now() - start}ms`)
+    console.log(`Preview Took: ${Date.now() - start}ms`)
     return generateBadge(query)
 })

@@ -3,6 +3,7 @@ import pool from "~/utils/db";
 import { v4 } from "uuid";
 
 export default defineEventHandler(async (event) => {
+	let start = Date.now();
 	const query = getQuery(event)
 	let currentCount = 1;
 	let totalCount = 1;
@@ -35,6 +36,7 @@ export default defineEventHandler(async (event) => {
 			"Content-Type": "image/svg+xml;charset=utf-8",
 		});
 		query.message = `${currentCount} / ${totalCount}`
+		console.log(`Hit Took: ${Date.now() - start}ms`)
 		return generateBadge(query)
 	}
 })
