@@ -2,6 +2,8 @@ import generateBadge from "~/utils/generateBadge";
 import pool from "~/utils/db";
 
 export default defineEventHandler(async (event) => {
+    let start = Date.now();
+
     const query = getQuery(event)
     let currentCount = 0;
     let totalCount = 0;
@@ -20,5 +22,7 @@ export default defineEventHandler(async (event) => {
         "Content-Type": "image/svg+xml;charset=utf-8",
     });
     query.message = `${currentCount} / ${totalCount}`
+
+    console.log(`Took: ${Date.now() - start}ms`)
     return generateBadge(query)
 })
