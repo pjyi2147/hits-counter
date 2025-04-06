@@ -8,6 +8,15 @@ export default defineNuxtConfig({
       'bootstrap-icons/font/bootstrap-icons.min.css',
       '~/assets/css/main.css'
     ],
+    nitro: {
+        experimental: {
+            websocket: true
+        }
+    },
+
+    plugins: [
+
+    ],
     app: {
         pageTransition: { name: 'page', mode: 'out-in' },
         head: {

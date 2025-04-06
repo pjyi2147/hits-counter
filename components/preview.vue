@@ -20,13 +20,13 @@ const jsonOutput = ref(false)
 </script>
 
 <template>
-	<div class="d-flex gap-3 flex-column">
+	<div class="d-flex gap-3 flex-column text-center" >
 		<hr>
-		<div>
-			<h5>Preview</h5>
+		<div >
+			<h5 class="mb-3">Result</h5>
 			<img :src="'/api/previewBadge?'+params" alt="badge">
 		</div>
-		<h5></h5>
+		<h6>Insert In Your File</h6>
 		<div class="d-flex gap-2 flex-column">
 			<div class="card">
 				<div class="card-header">

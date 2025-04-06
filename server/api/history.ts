@@ -8,7 +8,7 @@ export default defineEventHandler(async (event) => {
         today_hits: 0,
         history: [] as Object[]
     }
-    if (query.url){
+    if (query.url && query.url.replace(" ", "").length > 0){
         const total =
             await pool.query('SELECT * FROM tracking_urls WHERE url = $1', [query.url])
         if (total.rowCount === 1){

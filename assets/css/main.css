@@ -8,12 +8,12 @@
     display: none;
 }
 
-#createBadgeForm > div{
+#createBadgeForm > *{
     width: 100%;
 }
 
 @media screen and (min-width: 576px) {
-    #createBadgeForm > div{
+    #createBadgeForm > *{
         width: 500px;
     }
 }

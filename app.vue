@@ -1,5 +1,5 @@
 <template>
-	<div data-bs-theme="dark" class="d-flex flex-column bg-body-tertiary text-body pb-5" style="min-height: 100vh">
+	<div data-bs-theme="dark" class="d-flex flex-column bg-body-tertiary text-body" style="min-height: 100vh">
 		<nav class="navbar navbar-expand-lg sticky-top border-bottom bg-body-tertiary" style="backdrop-filter: blur(8px); background-color: rgb(43 48 53 / 70%) !important">
 			<div class="container-fluid">
 				<NuxtLink class="navbar-brand" to="/">Hits Counter</NuxtLink>
@@ -15,13 +15,20 @@
 						<a class="nav-link" aria-disabled="true"
 						   target="_blank"
 						   href="https://github.com/donaldzou/hits-counter">
-							<i class="bi bi-github me-2"></i>
+							<i class="bi bi-github me-2"></i>GitHub
 						</a>
 					</div>
 				</div>
 			</div>
 		</nav>
 		<NuxtPage></NuxtPage>
+		<footer class="bg-body mt-auto">
+			<div class="container py-3 d-flex">
+				<small>
+					Made with <i class="bi bi-heart-fill"></i> by <a href="https://github.com/donaldzou">Donald Zou</a>
+				</small>
+			</div>
+		</footer>
 	</div>
 
 </template>
