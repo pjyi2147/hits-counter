@@ -21,21 +21,20 @@ import { v4 } from "uuid";
 
 const { $socket } = useNuxtApp()
 const hits: Object[] = ref([])
-onMounted(() => {
+
+
+if ($socket){
 	if ($socket.disconnected){
 		$socket.connect()
 	}
-
-	if ($socket.connected){
-		$socket.on("hit", (url: string) => {
-			hits.value.unshift({
-				uuid: v4().toString(),
-				time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-				url: url
-			})
-		});
-	}
-})
+	$socket.on("hit", (url: string) => {
+		hits.value.unshift({
+			uuid: v4().toString(),
+			time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+			url: url
+		})
+	});
+}
 
 onBeforeRouteLeave(() => {
 	$socket.disconnect();
