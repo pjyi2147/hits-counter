@@ -10,7 +10,7 @@ export default defineEventHandler(async (event) => {
 	let totalCount = 1;
 	if (query.url && query.url.replace(" ", "").length > 0){
 		const io = getIO()
-		if (io) {
+		if (io && io.engine.clientsCount > 0) {
 			io.emit('hit', query.url)
 		}
 		const total =

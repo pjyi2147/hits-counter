@@ -9,8 +9,7 @@
 				<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 					<div class="navbar-nav ms-auto">
 						<NuxtLink to="/history" class="nav-link" aria-disabled="true">
-							<i class="bi bi-clock-history me-2"></i>
-							History
+							<i class="bi bi-clock-history me-2"></i>History
 						</NuxtLink>
 						<a class="nav-link" aria-disabled="true"
 						   target="_blank"

@@ -21,16 +21,25 @@ import { v4 } from "uuid";
 
 const { $socket } = useNuxtApp()
 const hits: Object[] = ref([])
+onMounted(() => {
+	if ($socket.disconnected){
+		$socket.connect()
+	}
 
-if ($socket){
-	$socket.on("hit", (url: string) => {
-		hits.value.unshift({
-			uuid: v4().toString(),
-			time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-			url: url
-		})
-	});
-}
+	if ($socket.connected){
+		$socket.on("hit", (url: string) => {
+			hits.value.unshift({
+				uuid: v4().toString(),
+				time: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+				url: url
+			})
+		});
+	}
+})
+
+onBeforeRouteLeave(() => {
+	$socket.disconnect();
+})
 </script>
 
 <template>
@@ -38,18 +47,19 @@ if ($socket){
 		<div class="w-100 d-flex flex-column gap-5">
 			<div class="bg-body-secondary">
 				<div class="container py-5 ">
-					<div class="mb-5">
+					<div class="mb-5 animate__animated animate__fadeIn">
 						<h1 class="display-1 fw-bold">
-							Hits Counter
+							Hits Counter<span class="h-100 bg-white d-inline-block ms-3"
+							                   style="width: 40px; height: 1rem !important;"> </span>
 						</h1>
 						<p class="fw-lighter h5">
-							Create a badge to track visits on your websites / GitHub Profile / GitHub Repo / anything that can host a image, no Javascript requirement (i.e. Google Analytics).
+							Create a badge to track visits on your websites / GitHub Profile / GitHub Repo / anything that can host a image, no JavaScript requirement (i.e. Google Analytics).
 						</p>
 						<p class="fw-lighter h5 my-3 d-flex align-items-center gap-2">
 							A Badge like this <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fhitscounter.dev&label=Visitors&icon=heart-fill&color=%23ff7575" alt="Badge">
 						</p>
 					</div>
-					<p class="text-muted">
+					<p class="text-muted animate__animated animate__fadeIn">
 						Due to the recent close down of
 						<a href="https://github.com/gjbae1212/hit-counter">hits.seeyoufarm.com</a>, I've decided to recreate one based on it. <br>Thanks <a href="https://github.com/gjbae1212">@gjbae1212</a> for the hardworking.
 					</p>

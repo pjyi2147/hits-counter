@@ -11,8 +11,10 @@ export default defineNitroPlugin((nitroApp: NitroApp) => {
     io.bind(engine);
 
     io.on("connection", (socket) => {
-        console.log("hi")
+        console.log("Connected Socket: " + socket.id + " | Connected Total: " + io.engine.clientsCount)
     });
+
+
 
     nitroApp.router.use("/socket.io", defineEventHandler({
         handler(event) {
