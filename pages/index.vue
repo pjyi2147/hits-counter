@@ -55,11 +55,14 @@ onBeforeRouteLeave(() => {
 							Hits Counter<span class="h-100 bg-white d-inline-block ms-3"
 							                   style="width: 40px; height: 1rem !important;"> </span>
 						</h1>
-						<p class="fw-lighter h5">
+						<p class="fw-lighter h5 mb-5">
 							Create a badge to track visits on your websites / GitHub Profile / GitHub Repo / anything that can host a image, no JavaScript requirement (i.e. Google Analytics).
 						</p>
-						<p class="fw-lighter h5 my-3 d-flex align-items-center gap-2">
+						<p class="fw-lighter h5 my-3 d-flex align-items-center gap-2 mb-2">
 							A Badge like this <img src="https://hitscounter.dev/api/hit?url=https%3A%2F%2Fhitscounter.dev&label=Visitors&icon=heart-fill&color=%23ff7575" alt="Badge">
+						</p>
+						<p class="fw-lighter h5">
+							Containing [Icon] [Label] [# of Hits Today] [# of Hits Total]
 						</p>
 					</div>
 					<p class="text-muted animate__animated animate__fadeIn">
