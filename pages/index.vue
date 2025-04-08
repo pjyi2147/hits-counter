@@ -36,6 +36,10 @@ if ($socket){
 	});
 }
 
+const hitSummary = ref(undefined)
+const hitSummaryFetch = await useFetch("/api/hitSummary").then(res => {
+	hitSummary.value = res.data.value;
+})
 onBeforeRouteLeave(() => {
 	$socket.disconnect();
 })
@@ -45,7 +49,7 @@ onBeforeRouteLeave(() => {
 	<div class="flex-grow-1 d-flex mb-5">
 		<div class="w-100 d-flex flex-column gap-5">
 			<div class="bg-body-secondary">
-				<div class="container py-5 ">
+				<div class="container py-5">
 					<div class="mb-5 animate__animated animate__fadeIn">
 						<h1 class="display-1 fw-bold">
 							Hits Counter<span class="h-100 bg-white d-inline-block ms-3"
@@ -99,6 +103,12 @@ onBeforeRouteLeave(() => {
 			</div>
 			<div class="container">
 				<hr class="mb-5">
+				<div class="text-center">
+					<h5 class="fw-lighter">Tracking
+						<strong class="fw-bold">{{ hitSummary.urlCount }}</strong>
+						URLs &
+						<strong class="fw-bold">{{ hitSummary.urlTotalHits }}</strong> Hits</h5>
+				</div>
 				<h4 class="mb-4 text-center">
 					Live Hits of all URLs
 				</h4>

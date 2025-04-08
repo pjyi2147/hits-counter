@@ -32,8 +32,8 @@ export default defineEventHandler(async (event) => {
 
 	if (query.output && query.output === 'json'){
 		return {
-			'today_hits': currentCount,
-			'total_hits': totalCount
+			today_hits: currentCount,
+			total_hits: totalCount
 		}
 	}else{
 		setResponseHeaders(event, {
