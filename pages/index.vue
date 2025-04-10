@@ -20,8 +20,13 @@ import dayjs from 'dayjs';
 import { v4 } from "uuid";
 
 const { $socket } = useNuxtApp()
-const hits: Object[] = ref([])
 
+interface hit {
+	uuid: PropertyKey,
+	time: String,
+	url: String
+}
+const hits: Ref<hit[]> = ref([])
 
 if ($socket){
 	if ($socket.disconnected){
@@ -36,9 +41,14 @@ if ($socket){
 	});
 }
 
-const hitSummary = ref(undefined)
-const hitSummaryFetch = await useFetch("/api/hitSummary").then(res => {
-	hitSummary.value = res.data.value;
+
+interface HitSummary {
+	urlCount: Number,
+	urlTotalHits: Number
+}
+let hitSummary: HitSummary | undefined = undefined
+await useFetch("/api/hitSummary").then(res => {
+	hitSummary = res.data.value as HitSummary;
 })
 onBeforeRouteLeave(() => {
 	$socket.disconnect();
