@@ -4,7 +4,6 @@ import { v4 } from "uuid";
 import {getIO} from "~/server/utils/socket";
 
 export default defineEventHandler(async (event) => {
-	let start = Date.now();
 	const query = getQuery(event)
 	let currentCount = 1;
 	let totalCount = 1;
@@ -12,7 +11,6 @@ export default defineEventHandler(async (event) => {
 		const io = getIO()
 		if (io && io.engine.clientsCount > 0) {
 			io.emit('hit', query.url)
-			console.log('Emit Hit: ' + query.url)
 		}
 		const total =
 			await pool.query(`UPDATE tracking_urls AS T SET total_hits = total_hits + 1 WHERE T.url = $1 RETURNING T.total_hits, T.id`, [query.url])
@@ -29,7 +27,6 @@ export default defineEventHandler(async (event) => {
 
 		}
 	}
-
 	if (query.output && query.output === 'json'){
 		return {
 			today_hits: currentCount,
@@ -40,7 +37,6 @@ export default defineEventHandler(async (event) => {
 			"Content-Type": "image/svg+xml;charset=utf-8",
 		});
 		query.message = `${currentCount} / ${totalCount}`
-		console.log(`Hit Took: ${Date.now() - start}ms`)
 		return generateBadge(query)
 	}
 })

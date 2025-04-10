@@ -18,13 +18,10 @@ export default defineEventHandler(async (event) => {
                 currentCount = today.rows[0].hit_count
             }
         }
-
         setResponseHeaders(event, {
             "Content-Type": "image/svg+xml;charset=utf-8",
         });
         query.message = `${currentCount} / ${totalCount}`
-
-        console.log(`Preview Took: ${Date.now() - start}ms`)
     }
 
 
