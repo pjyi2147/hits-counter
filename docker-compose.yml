@@ -2,7 +2,7 @@ services:
   hits-counter:
     image: "ghcr.io/pjyi2147/hits-counter:latest"
     ports:
-      - "3000:3000"
+      - "3001:3000"
     environment:
       - DATABASE_URL=postgres
       - DATABASE_USER=postgres
@@ -16,6 +16,8 @@ services:
   postgres:
     image: postgres:16-alpine
     hostname: postgres
+    ports:
+      - "5432:5432"
     environment:
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres

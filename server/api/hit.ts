@@ -13,30 +13,40 @@ export default defineEventHandler(async (event) => {
       io.emit("hit", query.url);
     }
     const total = await pool.query(
-      `UPDATE tracking_urls AS T SET total_hits = total_hits + 1 WHERE T.url = $1 RETURNING T.total_hits, T.id`,
+      `UPDATE tracking_urls
+       SET
+       total_hits = total_hits + 1,
+       today_hits = CASE
+         WHEN track_datatime = NOW()::DATE THEN today_hits + 1
+         ELSE 1
+       END,
+       track_datatime = NOW()::DATE
+       WHERE url = $1
+       RETURNING total_hits, today_hits, id`,
       [query.url]
     );
+
     if (total.rowCount === 0) {
       const newId = v4().toString();
-      await pool.query("INSERT INTO tracking_urls (id, url, total_hits) VALUES ($1, $2, 1);", [
-        newId,
-        query.url
-      ]);
-      await pool.query(`CREATE TABLE "${newId}" (hit_date DATE, hit_count INT)`);
-      await pool.query(`INSERT INTO "${newId}" (hit_date, hit_count) VALUES (NOW()::DATE, 1)`);
+      await pool.query(
+        "INSERT INTO tracking_urls (id, url, total_hits, today_hits) VALUES ($1, $2, 1, 1);",
+        [newId, query.url]
+      );
     } else {
       totalCount = total.rows[0].total_hits;
-      const existId = total.rows[0].id;
-      const newhit = await pool.query(`SELECT update_hit_count_dynamic('${existId}')`);
-      currentCount = newhit.rows[0].update_hit_count_dynamic;
+      currentCount = total.rows[0].today_hits;
     }
-  }
-  if (query.output && query.output === "json") {
-    return {
-      today_hits: currentCount,
-      total_hits: totalCount
-    };
-  } else {
+
+    if (query.json && query.json === "true") {
+      setResponseHeaders(event, {
+        "Content-Type": "application/json"
+      });
+      return {
+        today_hits: currentCount,
+        total_hits: totalCount
+      };
+    }
+
     setResponseHeaders(event, {
       "Content-Type": "image/svg+xml;charset=utf-8"
     });
