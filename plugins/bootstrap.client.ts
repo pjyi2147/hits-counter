@@ -1,5 +1,5 @@
-import bootstrap from 'bootstrap/dist/js/bootstrap.bundle.js';
+import bootstrap from "bootstrap/dist/js/bootstrap.bundle.js";
 
 export default defineNuxtPlugin((nuxtApp) => {
-    nuxtApp.provide('bootstrap', bootstrap);
+  nuxtApp.provide("bootstrap", bootstrap);
 });

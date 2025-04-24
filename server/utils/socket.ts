@@ -1,10 +1,9 @@
-import type { Server as IOServer } from 'socket.io'
+import type { Server as IOServer } from "socket.io";
 
-let io: IOServer | null = null
-
+let io: IOServer | null = null;
 
 export const setIO = (instance: IOServer) => {
-    io = instance
-}
+  io = instance;
+};
 
-export const getIO = (): IOServer | null => io
+export const getIO = (): IOServer | null => io;

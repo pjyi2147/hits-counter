@@ -1,10 +1,10 @@
-import { io } from "socket.io-client"
+import { io } from "socket.io-client";
 
 export default defineNuxtPlugin(() => {
-	const socket = io()
-	return {
-		provide: {
-			socket: socket
-		}
-	}
-})
+  const socket = io();
+  return {
+    provide: {
+      socket: socket
+    }
+  };
+});
