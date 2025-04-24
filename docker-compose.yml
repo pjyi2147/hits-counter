@@ -1,8 +1,6 @@
 services:
   hits-counter:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: "ghcr.io/pjyi2147/hits-counter:latest"
     ports:
       - "3000:3000"
     environment:
