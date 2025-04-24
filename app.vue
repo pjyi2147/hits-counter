@@ -13,7 +13,7 @@
 						</NuxtLink>
 						<a class="nav-link" aria-disabled="true"
 						   target="_blank"
-						   href="https://github.com/donaldzou/hits-counter">
+						   href="https://github.com/pjyi2147/hits-counter">
 							<i class="bi bi-github me-2"></i>GitHub
 						</a>
 					</div>
@@ -24,7 +24,7 @@
 		<footer class="bg-body mt-auto">
 			<div class="container py-3 d-flex">
 				<small>
-					Made with <i class="bi bi-heart-fill"></i> by <a href="https://github.com/donaldzou">Donald Zou</a>
+					Made with <i class="bi bi-heart-fill"></i> by <a href="https://github.com/donaldzou">Donald Zou</a> and <a href="https://github.com/pjyi2147">Patrick Yi</a>
 				</small>
 			</div>
 		</footer>
