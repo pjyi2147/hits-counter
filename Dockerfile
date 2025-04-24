@@ -20,6 +20,7 @@ WORKDIR /app
 
 # Copy built files from the build stage
 COPY --from=build /app/.output ./.output
+COPY --from=build /app/public ./public
 COPY --from=build /app/package*.json ./
 
 # Expose port
