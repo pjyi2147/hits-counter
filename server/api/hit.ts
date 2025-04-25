@@ -48,7 +48,10 @@ export default defineEventHandler(async (event) => {
     }
 
     setResponseHeaders(event, {
-      "Content-Type": "image/svg+xml;charset=utf-8"
+      "Content-Type": "image/svg+xml;charset=utf-8",
+      "Cache-Control": "no-cache, no-store, must-revalidate",
+      "Pragma": "no-cache",
+      "Expires": "0"
     });
     query.message = `${currentCount} / ${totalCount}`;
     return generateBadge(query);
